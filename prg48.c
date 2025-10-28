@@ -66,7 +66,37 @@ void postorder(struct Node* root)
     printf("%d\t",root->data);
 }
 
+struct Node* search(struct Node* root,int data)
+{
+    if(root==NULL||root==data)
+    return root;
 
+    if(data<root->data)
+    search(root->left,data);
+    else
+    search(root->right,data);
+}
+
+struct Node* findMin(struct Node* root)
+{
+    while(root!=NULL && root->left!=NULL)
+    root = root->left;
+
+    return root;
+}
+
+struct Node* findMax(struct Node* root)
+{
+    while(root!=NULL && root->right!=NULL)
+    root = root->right;
+
+    return root;
+}
+
+struct Node* delete(struct Node* root,int data)
+{
+    
+}
 
 
 
